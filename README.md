@@ -1,4 +1,2 @@
 # jlessons
 java lessons
-
-Hello!
