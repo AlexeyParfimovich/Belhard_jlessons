@@ -6,8 +6,6 @@ package homeWorks;
 */
 
 
-import java.util.Date;
-
 public class Task21 {
     public static void main(String[] args) {
 
@@ -24,7 +22,7 @@ public class Task21 {
 
         startTime = System.currentTimeMillis();
         for ( int i=0; i< cnt; i++) {
-            buff1 += str;
+            buff1 = buff1 + str;
         }
         finishTime = System.currentTimeMillis();
         System.out.println("\nRun time for String (ms) = " + (finishTime - startTime));
