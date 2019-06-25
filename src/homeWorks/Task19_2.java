@@ -12,15 +12,20 @@ public class Task19_2 {
 
         Scanner sc = new Scanner(System.in);
 
-        System.out.println("\nPlease, input a string:");
+        System.out.println("Please, input a string:");
         String str = sc.nextLine();
         sc.close();
 
         int wordsNum = 0;                                                                                                // Счетчик количества слов
-        int wordStartPos = 0;                                                                                            // Позиция начала слова в строке
-        String punctMarks = ",.:;-!? ";                                                                                  // Множество разделителей слов
+        //int wordStartPos = 0;                                                                                            // Позиция начала слова в строке
+        String punctMarks = "[ ,.:;!?-]+";                                                                                  // Множество разделителей слов
 
-        // Поиск слов между разделителями
+        // Разбивка строки на слова с использованием регулярных выражений
+        String[] parts = str.split(punctMarks);
+        wordsNum = parts.length;
+
+/*
+        // Поиск слов между разделителями - не оптимальный вариант c использованием цикла
         for(int i = 0; i < str.length(); i++) {
             // Проверка если символ в строке есть множестве разделителей
             if (punctMarks.indexOf(str.charAt(i)) >= 0) {
@@ -38,7 +43,7 @@ public class Task19_2 {
         if (wordStartPos < str.length()) {
             wordsNum++;
         }
-
+*/
         System.out.println("\nThere are " + wordsNum + " words in the string");
     }
 }
